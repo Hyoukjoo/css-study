@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'apple', sans-serif;
+}
+
+body {
+  background-color: darkslategrey;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.overlay {
+  background: rgba(0, 0, 0, 0.8);
+  width: 100%;
+  height: 100vh;
+}
+
+.siteTitle {
+  font-family: cursive;
+  color: #fff;
+  letter-spacing: 1rem;
+  font-size: 5rem;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%);
+  text-shadow: 0 0 30px #ff0055;
+}
+
+.siteTitle i {
+  font-size: 4rem;
+}
+
+.siteTitle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  background: #ff0055;
+  opacity: 0.4;
+  filter: blur(30px);
+}
+
+.loginCard {
+  border-radius: 1rem;
+  width: 25rem;
+  height: 20rem;
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%);
+  padding: 1rem 3.5rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  z-index: 1;
+}
+
+.loginCard::before {
+  content: '';
+  border-radius: 1rem;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 50%;
+  z-index: -1;
+  filter: blur(1px);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.loginCard::after {
+  content: '';
+  border-radius: 1rem;
+  position: absolute;
+  top: -5px;
+  bottom: -5px;
+  left: -5px;
+  right: -5px;
+  background: linear-gradient(
+    45deg,
+    rgba(131, 58, 180, 1) 0%,
+    rgba(253, 29, 29, 1) 50%,
+    rgba(252, 176, 69, 1) 100%
+  );
+  pointer-events: none;
+  animation: animate 5s linear infinite;
+  z-index: -1;
+}
+
+@keyframes animate {
+  0% {
+    filter: blur(50px) hue-rotate(0deg);
+  }
+  100% {
+    filter: blur(50px) hue-rotate(360deg);
+  }
+}
+
+.loginCard .cardTitle {
+  margin: 0;
+  padding: 0;
+  font-size: 2rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+}
+
+.loginCard .input {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.loginCard .input input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+  outline: none;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.4);
+  padding: 0.25rem 0;
+}
+
+::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.loginCard .input input[type='submit'] {
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+  outline: none;
+  max-width: 150px;
+  cursor: pointer;
+  background: transparent;
+  border-radius: 2rem;
+  margin-top: 1rem;
+}
+
+.loginCard .input input[type='submit']:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.loginCard p {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.4);
+  margin-top: 1.5rem;
+}
+
+.loginCard p a {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: underline;
+}
